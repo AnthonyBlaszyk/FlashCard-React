@@ -7,16 +7,44 @@ export const MentalCard = (props: any) => {
   );
 
   return (
-    <div className="card container border border-info">
-      <GetRandomQuestion data={props.data[randomNumber]} />
-      <button
-        className="btn btn-outline-info"
-        onClick={() =>
-          setRandomNumber(Math.floor(Math.random() * props.data.length))
-        }
-      >
-        Next Question
-      </button>
+    <div>
+      {/* TEST USE EFFECT */}
+      <div className="card container border border-info">
+        {React.useEffect((): any => {
+          <div>
+            <h1>Hello</h1>
+            {console.log(props.data)}
+            <GetRandomQuestion
+              data={props.data[randomNumber]}
+              displayAnswer={false}
+            />
+          </div>;
+        }, [randomNumber])}
+        <button
+          className="btn btn-outline-info"
+          onClick={() =>
+            setRandomNumber(Math.floor(Math.random() * props.data.length))
+          }
+        >
+          Next Question
+        </button>
+      </div>
+
+      {/* SANS LE USE EFFECT */}
+      <div className="card container border border-info">
+        <GetRandomQuestion
+          data={props.data[randomNumber]}
+          displayAnswer={false}
+        />
+        <button
+          className="btn btn-outline-info"
+          onClick={() =>
+            setRandomNumber(Math.floor(Math.random() * props.data.length))
+          }
+        >
+          Next Question
+        </button>
+      </div>
     </div>
   );
 };

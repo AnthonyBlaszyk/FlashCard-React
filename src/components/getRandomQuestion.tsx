@@ -1,7 +1,7 @@
 import React from "react";
 
 export const GetRandomQuestion = (props: any) => {
-  const [showAnswer, setShowAnswer] = React.useState(false);
+  const [showAnswer, setShowAnswer] = React.useState(props.displayAnswer);
 
   return (
     <>
