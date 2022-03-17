@@ -1,5 +1,5 @@
 import React from "react";
-import { QuestionAnswerType } from "./questionsAnswer";
+import { QuestionAnswerType } from "./data";
 
 type typeProps = {
   data: QuestionAnswerType;

@@ -1,6 +1,6 @@
 import React from "react";
-import { GetRandomQuestion } from "./getRandomQuestion";
-import { QuestionAnswerType } from "./questionsAnswer";
+import { GetRandomQuestion } from "./getMentalCard";
+import { QuestionAnswerType } from "./data";
 
 type propsType = {
   data: QuestionAnswerType[];
