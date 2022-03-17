@@ -1,0 +1,23 @@
+.card {
+  width: 50vw;
+  background-color: aliceblue;
+  margin: auto;
+  margin-top: 25vh;
+  text-align: center;
+  padding: 25px;
+}
+
+button {
+  margin: 10px 0;
+}
+.hideAnswer {
+  background-color: black;
+  color: black;
+  padding: 10px;
+}
+
+.showAnswer {
+  background-color: transparent;
+  color: black;
+  padding: 10px;
+}
