@@ -1,7 +1,17 @@
 import React from "react";
+import { QuestionAnswerType } from "./questionsAnswer";
 
-export const GetRandomQuestion = (props: any) => {
-  const [showAnswer, setShowAnswer] = React.useState(props.displayAnswer);
+type typeProps = {
+  data: QuestionAnswerType;
+  randomNumber: number;
+};
+
+export const GetRandomQuestion = (props: typeProps) => {
+  const [showAnswer, setShowAnswer] = React.useState(false);
+
+  React.useEffect(() => {
+    setShowAnswer(false);
+  }, [props.randomNumber]);
 
   return (
     <>
