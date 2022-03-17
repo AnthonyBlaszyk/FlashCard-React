@@ -28,13 +28,22 @@ export const GetInput = (props: propsType): JSX.Element => {
 
 export const VerifyInput = (props: propsType): JSX.Element => {
   console.log(props.answer);
-  if (props.answer === props.data[props.questionNumber].correctAnswer) {
+  if (
+    props.answer.toLowerCase() ===
+    props.data[props.questionNumber].correctAnswer.toLowerCase()
+  ) {
     return (
       <div>
-        <h2>Correct</h2>
+        <h2>{props.data[props.questionNumber].question}</h2>
+        <p>Correct!</p>
       </div>
     );
   } else {
-    return <div>Wrong</div>;
+    return (
+      <div>
+        <h2>{props.data[props.questionNumber].question}</h2>
+        <p>Wrong!</p>
+      </div>
+    );
   }
 };
