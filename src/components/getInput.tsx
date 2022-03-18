@@ -27,7 +27,6 @@ export const GetInput = (props: propsType): JSX.Element => {
 };
 
 export const VerifyInput = (props: propsType): JSX.Element => {
-  console.log(props.answer);
   if (
     props.answer.toLowerCase() ===
     props.data[props.questionNumber].correctAnswer.toLowerCase()
