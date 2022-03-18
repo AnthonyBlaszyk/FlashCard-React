@@ -12,7 +12,10 @@ export const InputCard = (props: propsType): JSX.Element => {
   const [answer, setAnswer] = React.useState("");
 
   return (
-    <div className="card">
+    <div className="card container border border-info text-info">
+      <h3>{props.data[questionNumber].question}</h3>
+      <span className="separate"></span>
+
       {submitedAnswer ? (
         <VerifyInput
           data={props.data}
@@ -30,7 +33,7 @@ export const InputCard = (props: propsType): JSX.Element => {
       )}
 
       <button
-        className="btn btn-outline-info"
+        className="btn btn-outline-info "
         onClick={() => {
           if (submitedAnswer) {
             questionNumber < props.data.length - 1

@@ -23,12 +23,15 @@ function App() {
   ];
 
   return (
-    <div>
+    <div className="mainContainer">
       <ul>
         {cardArray.map((element) => {
           return (
             <li>
-              <button onClick={() => setCard(element.value)}>
+              <button
+                className="btn btn-outline-info"
+                onClick={() => setCard(element.value)}
+              >
                 {element.name}
               </button>
             </li>

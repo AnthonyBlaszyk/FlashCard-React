@@ -39,8 +39,10 @@ export const QcmCard = (props: propsType): JSX.Element => {
   }, [props.data, questionNumber]);
 
   return (
-    <div className="card">
+    <div className="card container border border-info text-info">
       <h3>{props.data[questionNumber].question}</h3>
+      <span className="separate"></span>
+
       {submitedAnswer ? (
         <VerifyQcmCard
           data={props.data}

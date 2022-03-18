@@ -12,9 +12,6 @@ export const GetInput = (props: propsType): JSX.Element => {
   return (
     <form>
       <div className="form-group">
-        <label htmlFor="exampleInputEmail1">
-          {props.data[props.questionNumber].question}
-        </label>
         <input
           onChange={(element) => props.setAnswer(element.target.value)}
           className="form-control"
@@ -33,14 +30,12 @@ export const VerifyInput = (props: propsType): JSX.Element => {
   ) {
     return (
       <div>
-        <h2>{props.data[props.questionNumber].question}</h2>
         <p>Correct!</p>
       </div>
     );
   } else {
     return (
       <div>
-        <h2>{props.data[props.questionNumber].question}</h2>
         <p>Wrong!</p>
       </div>
     );

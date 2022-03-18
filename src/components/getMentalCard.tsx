@@ -15,7 +15,6 @@ export const GetRandomQuestion = (props: typeProps) => {
 
   return (
     <>
-      <h3>{props.data.question}</h3>
       {showAnswer ? (
         <p className="showAnswer">{props.data.correctAnswer}</p>
       ) : (
