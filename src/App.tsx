@@ -6,11 +6,36 @@ import { InputCard } from "./components/inputCard";
 import { QcmCard } from "./components/qcmCard";
 
 function App() {
+  const [card, setCard] = React.useState(<MentalCard data={questionsAnswer} />);
+  const cardArray = [
+    {
+      value: <MentalCard data={questionsAnswer} />,
+      name: "Mental Card",
+    },
+    {
+      value: <InputCard data={questionsAnswer} />,
+      name: "Input Card",
+    },
+    {
+      value: <QcmCard data={questionsAnswer} />,
+      name: "QCM Card",
+    },
+  ];
+
   return (
     <div>
-      <MentalCard data={questionsAnswer} />
-      <InputCard data={questionsAnswer} />
-      <QcmCard data={questionsAnswer} />
+      <ul>
+        {cardArray.map((element) => {
+          return (
+            <li>
+              <button onClick={() => setCard(element.value)}>
+                {element.name}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+      {card}
     </div>
   );
 }
