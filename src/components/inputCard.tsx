@@ -12,7 +12,8 @@ export const InputCard = (props: propsType): JSX.Element => {
   const [answer, setAnswer] = React.useState("");
 
   return (
-    <div className="card container border border-info text-info">
+    <div className="card container border border-info">
+      <div className="logo"></div>
       <h3>{props.data[questionNumber].question}</h3>
       <span className="separate"></span>
 

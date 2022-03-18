@@ -15,7 +15,6 @@ export const GetQcmCard = (props: propsType): JSX.Element => {
       {props.answerArray.map((answer) => {
         return (
           <div key={answer}>
-            {/* Button 1 */}
             <div className="form-check">
               <input
                 onChange={(element) => {
@@ -37,16 +36,8 @@ export const GetQcmCard = (props: propsType): JSX.Element => {
 
 export const VerifyQcmCard = (props: propsType): JSX.Element => {
   if (props.answer === props.data[props.questionNumber].correctAnswer) {
-    return (
-      <div>
-        <p>Correct!</p>
-      </div>
-    );
+    return <p>Correct!</p>;
   } else {
-    return (
-      <div>
-        <p>Wrong!</p>
-      </div>
-    );
+    return <p>Wrong!</p>;
   }
 };

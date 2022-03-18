@@ -6,13 +6,14 @@ type propsType = {
   data: QuestionAnswerType[];
 };
 
-export const MentalCard = (props: propsType) => {
+export const MentalCard = (props: propsType): JSX.Element => {
   const [randomNumber, setRandomNumber] = React.useState(
     Math.floor(Math.random() * props.data.length)
   );
 
   return (
-    <div className="card container border border-info text-info">
+    <div className="card container border border-info">
+      <div className="logo"></div>
       <h3>{props.data[randomNumber].question}</h3>
       <span className="separate"></span>
 

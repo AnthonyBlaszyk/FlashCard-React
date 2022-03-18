@@ -39,7 +39,8 @@ export const QcmCard = (props: propsType): JSX.Element => {
   }, [props.data, questionNumber]);
 
   return (
-    <div className="card container border border-info text-info">
+    <div className="card container border border-info">
+      <div className="logo"></div>
       <h3>{props.data[questionNumber].question}</h3>
       <span className="separate"></span>
 
