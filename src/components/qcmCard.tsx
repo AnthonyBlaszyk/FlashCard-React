@@ -6,10 +6,37 @@ type propsType = {
   data: QuestionAnswerType[];
 };
 
+const shuffleArray = (array: string[]): string[] => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+};
+
 export const QcmCard = (props: propsType): JSX.Element => {
   const [questionNumber, setQuestionNumber] = React.useState(0);
   const [submitedAnswer, setSubmitedAnswer] = React.useState(false);
   const [answer, setAnswer] = React.useState("");
+  const [answerArray, setAnswerArray] = React.useState([
+    props.data[questionNumber].correctAnswer,
+    props.data[questionNumber].wrongAnswerOne,
+    props.data[questionNumber].wrongAnswerTwo,
+    props.data[questionNumber].wrongAnswerThree,
+  ]);
+
+  React.useEffect(() => {
+    setAnswerArray(
+      shuffleArray([
+        props.data[questionNumber].correctAnswer,
+        props.data[questionNumber].wrongAnswerOne,
+        props.data[questionNumber].wrongAnswerTwo,
+        props.data[questionNumber].wrongAnswerThree,
+      ])
+    );
+  }, [props.data, questionNumber]);
 
   return (
     <div className="card">
@@ -20,6 +47,7 @@ export const QcmCard = (props: propsType): JSX.Element => {
           answer={answer}
           setAnswer={setAnswer}
           questionNumber={questionNumber}
+          answerArray={answerArray}
         />
       ) : (
         <GetQcmCard
@@ -27,6 +55,7 @@ export const QcmCard = (props: propsType): JSX.Element => {
           answer={answer}
           setAnswer={setAnswer}
           questionNumber={questionNumber}
+          answerArray={answerArray}
         />
       )}
       <button
